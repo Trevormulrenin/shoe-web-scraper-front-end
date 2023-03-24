@@ -1,0 +1,214 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto; /* center the table horizontally */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.Button-divider {
+  border-right: 1px solid #ffffff;
+  height: 24px;
+  margin: 0 12px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+
+
+
+.new-lowest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.new-lowest-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 500px;
+}
+
+.new-lowest-card h4 {
+  margin-bottom: 10px;
+}
+
+.new-lowest-card h6 {
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/*
+.new-lowest-card p {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+body {
+  background-color: #808080;
+}
+*/
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto; /* center the table horizontally */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.Button-divider {
+  border-right: 1px solid #ffffff;
+  height: 24px;
+  margin: 0 12px;
+}
+
+/*  .root {
+  flex-grow: 1;
+}
+
+.menu-button {
+  margin-right: 16px;
+  color: #ffffff;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 16px;
+}
+
+.title {
+  flex-grow: 1;
+  color: #ffffff;
+}
+
+.drawer-list {
+  width: 250px;
+  padding-top: 20px;
+  background-color: gray;
+}
+
+.drawer-list .MuiListItem-root {
+  justify-content: flex-start;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 1px solid white;
+}
+
+.drawer-list .MuiButton-root {
+  color: white;
+  width: 100%;
+  justify-content: left;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  padding: 0 8px;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.drawer-list-item {
+  padding: 16px;
+}
+
+.drawer-list-item:hover {
+  background-color: #e0e0e0;
+}
+
+.drawer-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+*/
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
