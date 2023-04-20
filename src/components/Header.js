@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -100,15 +100,43 @@ export default function Header() {
   const [activeComponent, setActiveComponent] = useState(null);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [lastActiveTime, setLastActiveTime] = useState(Date.now());
+  const idleTimeout = 5 * 60 * 1000;
 
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
-  const checkUserLoggedIn = () => {
+  const checkUserLoggedIn = useCallback(() => {
     const user = localStorage.getItem('user');
     setIsLoggedIn(user !== null);
-  };
+  }, []);
+
+  const handleUserActivity = useCallback(() => {
+    setLastActiveTime(Date.now());
+  }, []);
+
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+    navigate('/');
+  }, [navigate]);
+
+  useEffect(() => {
+    const idleIntervalId = setInterval(() => {
+      const timeElapsed = Date.now() - lastActiveTime;
+      if (timeElapsed >= idleTimeout) {
+        handleLogout();
+      }
+    }, 1000);
+
+    const userActivityListener = window.addEventListener('mousemove', handleUserActivity);
+
+    return () => {
+      clearInterval(idleIntervalId);
+      window.removeEventListener('mousemove', userActivityListener);
+    };
+  }, [isLoggedIn, lastActiveTime, handleLogout, handleUserActivity, idleTimeout]);
 
   const toggleDrawer = (open) => (event) => {
     setIsDrawerOpen(open);
@@ -132,20 +160,14 @@ export default function Header() {
 
   const handleSearchByNameClick = () => {
     navigate('/search');
-  }
+  };
 
   const handleMostPopularClick = () => {
     navigate('/most-popular');
-  }
+  };
 
   const handleScheduler = () => {
     navigate('/notify-me');
-  }
-
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setIsLoggedIn(false);
-    navigate('/');
   };
 
   const handleLoginClose = () => {
@@ -179,8 +201,7 @@ export default function Header() {
 
   useEffect(() => {
     checkUserLoggedIn();
-  }, []);
-
+  }, [checkUserLoggedIn]);
 
 
 

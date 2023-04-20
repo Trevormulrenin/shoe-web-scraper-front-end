@@ -1,5 +1,4 @@
 class NewLowestService {
-
     async getNewLowestShoe() {
         const response = await fetch('http://localhost:8087/newLowest', {
             method: 'GET',
@@ -11,7 +10,7 @@ class NewLowestService {
         console.log(data); // log the response to the console
         return data;
     }
-
+    
     async getAdidasNewLowest() {
         const response = await fetch('http://localhost:8087/adidasNewLowest', {
             method: 'GET',
@@ -59,7 +58,7 @@ class NewLowestService {
         console.log(data); // log the response to the console
         return data;
     }
-}
-
-const newLowestService = new NewLowestService();
-export default newLowestService;
+    }
+    
+    const newLowestService = new NewLowestService();
+    export default newLowestService;
