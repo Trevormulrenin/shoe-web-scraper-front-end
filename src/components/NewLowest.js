@@ -48,10 +48,10 @@ function NewLowest() {
       {shoeData ? (
         <div className="new-lowest-card">
           <Typography variant="h4" gutterBottom>
-            {shoeData.shoeName}
+            {shoeData.name}
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            {shoeData.shoePrice}
+            {shoeData.price}
           </Typography>
           <Typography variant="h6" gutterBottom>
             {shoeData.dateAndTime}

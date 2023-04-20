@@ -21,10 +21,10 @@ const MostPopular = () => {
   return (
     <div className="shoe-grid">
       {shoes.map((shoe) => (
-        <div className="shoe-card" key={shoe.shoeName}>
-          <img src={shoe.imageUrl} alt={shoe.shoeName} />
-          <p className="shoe-name">{shoe.shoeName}</p>
-          <p className="shoe-price">{shoe.shoePrice}</p>
+        <div className="shoe-card" key={shoe.name}>
+          <img src={shoe.imageUrl} alt={shoe.name} />
+          <p className="shoe-name">{shoe.name}</p>
+          <p className="shoe-price">{shoe.price}</p>
           <p className="shoe-date">{shoe.dateAndtime}</p>
         </div>
       ))}

@@ -21,6 +21,11 @@ function ScheduleShoe() {
     }
   };
 
+  const handleLogin = () => {
+    localStorage.setItem('user', 'loggedIn');
+    setIsLoggedIn(true);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('user');
     setIsLoggedIn(false);
@@ -54,7 +59,10 @@ function ScheduleShoe() {
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
-        <p>Please log in to access this page.</p>
+        <>
+          <p>Please log in to access this page.</p>
+          <button onClick={handleLogin}>Login</button>
+        </>
       )}
     </div>
   );

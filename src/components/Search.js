@@ -44,13 +44,13 @@ function SearchComponent() {
             {shoeData && (
                 <Grid item xs={12} md={5}>
                     <Card sx={{ borderRadius: '8px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)' }}>
-                        <img src={shoeData.imageUrl} alt={shoeData.shoeName} style={{ height: '200px', width: '400px' }} />
+                        <img src={shoeData.imageUrl} alt={shoeData.name} style={{ height: '200px', width: '400px' }} />
                         <CardContent>
                             <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', mb: 1 }}>
-                                {shoeData.shoeName}
+                                {shoeData.name}
                             </Typography>
                             <Typography variant="subtitle1" gutterBottom sx={{ padding: '4px 20px', border: '1px solid black', display: 'inline-block', fontSize: 25, color: 'black', mt: 1, mb: -2 }}>
-                                {shoeData.shoePrice}
+                                {shoeData.price}
                             </Typography>
                             <Typography variant="h6" gutterBottom sx={{ color: 'grey.700', mt: 4 }}>
                                 {shoeData.dateAndTime}
