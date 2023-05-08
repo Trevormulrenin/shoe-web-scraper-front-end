@@ -1,64 +1,36 @@
+import axios from 'axios';
+
 class NewLowestService {
-    async getNewLowestShoe() {
-        const response = await fetch('http://localhost:8087/newLowest/overall', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        console.log(data); // log the response to the console
-        return data;
-    }
-    
-    async getAdidasNewLowest() {
-        const response = await fetch('http://localhost:8087/newLowest/adidas', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        console.log(data); // log the response to the console
-        return data;
-    }
-    
-    async getNikeNewLowest() {
-        const response = await fetch('http://localhost:8087/newLowest/nike', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        console.log(data); // log the response to the console
-        return data;
-    }
-    
-    async getReebokNewLowest() {
-        const response = await fetch('http://localhost:8087/newLowest/reebok', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        console.log(data); // log the response to the console
-        return data;
-    }
-    
-    async getJordanNewLowest() {
-        const response = await fetch('http://localhost:8087/newLowest/retro-jordans', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        console.log(data); // log the response to the console
-        return data;
-    }
-    }
-    
-    const newLowestService = new NewLowestService();
-    export default newLowestService;
+  async getNewLowestShoe() {
+    const response = await axios.get('http://localhost:8087/newLowest/overall');
+    console.log(response.data);
+    return response.data;
+  }
+
+  async getAdidasNewLowest() {
+    const response = await axios.get('http://localhost:8087/newLowest/adidas');
+    console.log(response.data);
+    return response.data;
+  }
+
+  async getNikeNewLowest() {
+    const response = await axios.get('http://localhost:8087/newLowest/nike');
+    console.log(response.data);
+    return response.data;
+  }
+
+  async getReebokNewLowest() {
+    const response = await axios.get('http://localhost:8087/newLowest/reebok');
+    console.log(response.data);
+    return response.data;
+  }
+
+  async getJordanNewLowest() {
+    const response = await axios.get('http://localhost:8087/newLowest/retro-jordans');
+    console.log(response.data);
+    return response.data;
+  }
+}
+
+const newLowestService = new NewLowestService();
+export default newLowestService;

@@ -42,3 +42,19 @@ hr {
   border-top: 1px solid #999999;
   margin: 1rem;
 }
+
+.save-button {
+  background-color: #808080;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #282c34;
+  transform: scale(1.1);
+}
+

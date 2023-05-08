@@ -14,14 +14,17 @@ function ComparePriceComponent() {
   return (
     <div style={{ paddingTop: '100px'}}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="shoeId">Enter Shoe ID:</label>
-        <input
-          type="text"
-          id="shoeId"
-          value={shoeId}
-          onChange={(e) => setShoeId(e.target.value)}
-        />
-        <button type="submit">Submit</button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <label htmlFor="shoeId">Enter Shoe ID:</label>
+          <input
+            type="text"
+            id="shoeId"
+            value={shoeId}
+            onChange={(e) => setShoeId(e.target.value)}
+            style={{ marginLeft: '10px', marginRight: '10px', width: '150px' }}
+          />
+          <button type="submit">Submit</button>
+        </div>
       </form>
       {comparePrice && (
         <table style={{ marginTop: "20px" }}>

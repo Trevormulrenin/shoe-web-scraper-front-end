@@ -1,0 +1,31 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Tm5d8q7j!
+      POSTGRES_DB: shoepricetracker
+    networks:
+      - StockXNetwork
+  backend:
+    image: shoe-tracker-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/shoepricetracker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Tm5d8q7j!
+    depends_on:
+      - postgres
+    ports:
+      - "8087:8087"
+    networks:
+      - StockXNetwork
+  frontend:
+    build: .
+    image: shoe-tracker-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - StockXNetwork
+networks:
+  StockXNetwork:

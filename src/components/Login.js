@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import loginService from '../services/LoginService'
 import {useNavigate} from 'react-router-dom'
+import '../Login.css'
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -21,22 +22,28 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-        placeholder="Password"
-      />
-      <button type="submit">Login</button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <label className="login-label">Username:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          className="login-input"
+          placeholder="Email"
+        />
+        <label className="login-label">Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          className="login-input"
+          placeholder="Password"
+        />
+        <button type="submit" className="login-button">Login</button>
+        {error && <p className="login-error">{error}</p>}
+      </form>
+    </div>
   );
 };
 

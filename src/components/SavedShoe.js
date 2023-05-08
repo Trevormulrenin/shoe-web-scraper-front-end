@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SavedShoeService from "../services/SavedShoeService";
 import "../styles.css";
-import Login from "./Login";
 import { useNavigate } from 'react-router-dom';
 
 function SavedShoeComponent() {
@@ -39,11 +38,6 @@ function SavedShoeComponent() {
         });
     }
   }, [user]);
-
-  const handleLogin = (user, token) => {
-    localStorage.setItem("authToken", token);
-    setUser(user);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -103,6 +97,12 @@ const handleUpdatePrice = (event) => {
     });
 };
 
+const handleLogout = () => {
+  localStorage.removeItem('user');
+  setUser(null);
+  window.location.href = '/';
+}
+
 
 
 if (isLoading) {
@@ -120,6 +120,7 @@ return (
     {user ? (
       <div>
         <p>Welcome {user.email}!</p>
+        <button onClick={handleLogout}>Logout</button>
         <table>
           <thead>
             <tr>
@@ -205,7 +206,9 @@ return (
         </form>
       </div>
     ) : (
-      <Login onLogin={handleLogin} />
+      <div>
+        <p>Please log in to access this page.</p>
+      </div>
     )}
   </div>
 );
