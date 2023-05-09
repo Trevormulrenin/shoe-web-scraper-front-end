@@ -170,6 +170,10 @@ export default function Header() {
     navigate('/notify-me');
   };
 
+  const handleCreateUserClick = () => {
+    navigate('/create-user');
+  }
+
   const handleLoginClose = () => {
     setIsLoginOpen(false);
   };
@@ -184,6 +188,14 @@ export default function Header() {
     setIsLoginOpen(false);
   };
 
+  const renderCreateUserButton = () => {
+    if (!isLoggedIn) {
+      return (
+        <LoginButton color="inherit" onClick={handleCreateUserClick}>Create User</LoginButton>
+      );
+    }
+  };
+  
   const renderLoginLogoutButtons = () => {
     if (isLoggedIn) {
       return (
@@ -198,13 +210,11 @@ export default function Header() {
       );
     }
   };
-
+  
   useEffect(() => {
     checkUserLoggedIn();
   }, [checkUserLoggedIn]);
-
-
-
+  
   return (
     <Root>
       <AppBar position="static" style={{ backgroundColor: '#333333' }}>
@@ -219,6 +229,7 @@ export default function Header() {
             </TitleButton>
           </Title>
           <Box sx={{ flexGrow: 1 }} />
+          {renderCreateUserButton()}
           {renderLoginLogoutButtons()}
         </Toolbar>
       </AppBar>

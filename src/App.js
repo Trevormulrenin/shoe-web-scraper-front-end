@@ -11,6 +11,7 @@ import Search from './components/Search';
 import MostPopular from './components/MostPopular'
 import DisplayGraph from './components/DisplayGraph'
 import ScheduleShoe from './components/ScheduleShoe'
+import CreateUser from './components/CreateUser'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -36,6 +37,7 @@ function App() {
          <Route path="/most-popular" element={<MostPopular user={user} />} />
          <Route path="/display-graph/:shoeId/:email" element={<DisplayGraph user={user} />} />
          <Route path="/notify-me" element={<ScheduleShoe user ={user} />} />
+         <Route path="/create-user" element={<CreateUser user={user} />} />
        </Routes>
      </div>
     </Router>

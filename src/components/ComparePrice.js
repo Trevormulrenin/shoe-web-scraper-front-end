@@ -23,6 +23,8 @@ function ComparePriceComponent() {
             onChange={(e) => setShoeId(e.target.value)}
             style={{ marginLeft: '10px', marginRight: '10px', width: '150px' }}
           />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <button type="submit">Submit</button>
         </div>
       </form>

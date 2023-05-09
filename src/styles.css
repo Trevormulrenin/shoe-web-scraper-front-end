@@ -123,6 +123,11 @@ form label {
   margin-bottom: 5px;
 }
 
+.welcome {
+  margin-bottom: 10px;
+  margin-top: -50px;
+}
+
 form input[type="text"] {
   display: block;
   width: 100%;
